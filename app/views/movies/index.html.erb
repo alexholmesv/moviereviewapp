@@ -1,10 +1,12 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Movies</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Title</th>
       <th>Description</th>
       <th>Length</th>
@@ -33,4 +35,5 @@
 
 <br>
 
-<%= link_to 'New Movie', new_movie_path %>
+<%= link_to 'New Movie', new_movie_path, class: "btn btn-info", style: "color: white" %>
+</div>
