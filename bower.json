@@ -1,0 +1,20 @@
+{
+  "name": "moviereviewapp",
+  "version": "0.0.0",
+  "authors": [
+    "Alexander Holmes <alexander.holmes@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}
