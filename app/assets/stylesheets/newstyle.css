@@ -1,3 +1,78 @@
 .smallimage {
 	width:200px;
 }
+ 
+.pagemargin {
+	margin-top: 40px
+}
+
+.floatleft {
+	display:inline-block;
+	margin-right:10px;
+}
+
+.floatright {
+	display:inline-block;
+}
+
+.centertitle {
+	text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+}
+
+.card {
+  border-radius: 4px;
+  background-color: #F5F5F5;
+  padding: 20px;
+  margin: 10px;
+  min-width: 100%;
+  max-width: 30%;
+  flex: 0 0 auto;
+  box-shadow: 0 1px 0px rgba(0,0,0,0.2);
+  transition: transform 300ms;
+/*  position:relative;*/
+}
+
+.card:hover {
+  border-left: 16px solid #FF8000;
+  transform: scale(1.1)
+}
+
+.card:last-child {
+  max-width: 50%;
+}
+
+.photo {
+  max-height: 350px;
+  max-width: 100%;
+  vertical-align:top;
+  margin-right: auto;
+  margin-left: auto;
+  display: inline-block;
+
+}
+
+.formmargin {
+	margin-top: 20px;
+}
+
+body {
+	background-color: #AA4847;
+}
+
+.review_title {
+	margin: 0 0 20px 0;
+}
+
+.reviews {
+	padding: 15px 0;
+	border-bottom: 1px solid #EAEAEA
+	.star-rating {
+		padding-bottom: 8px;
+	}
+}
