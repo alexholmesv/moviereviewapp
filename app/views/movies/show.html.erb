@@ -3,12 +3,9 @@
 
   <%= link_to '', edit_movie_path(@movie), class: "btn btn-warning btn-small fa fa-pencil-square-o", style: "color: white"  %>   
 
-
   <% if user_signed_in?%>
   <%= link_to "", movie_path(@movie), method: :delete, class: "btn btn-danger btn-small fa fa-trash", style: "color: white" %>
   <% end %>
-
-  <%= link_to " New Review", new_movie_review_path(@movie.id), class: "btn btn-primary fa fa-plus-square-o"  %>
   <br>
   <br>
 
@@ -17,6 +14,8 @@
       <div class="row">
         <div class="col-md-5">
           <%= image_tag @movie.image.url(:medium) %>
+          <div class="star-rating" data-score=<%= @avg_review %>></div>
+                <em><%= "#{@reviews.length} reviews" %></em>
           <div class="table-responsive">
             <table class="table">
               <tbody>
@@ -25,8 +24,8 @@
                   <td> <%= @movie.title %></td>
                 </tr>
                 <tr>
-                  <td><strong>Description:</strong></td>
-                  <td><%= @movie.description %></td>
+                  <td><strong>Genre:</strong></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td><strong>Length:</strong></td>
@@ -47,7 +46,6 @@
         <div class="col-md-7 col-offset-1">
           <h1 class="review_title"><%= @movie.title %></h1>
           <p><%= @movie.description %></p>
-
             <% if @reviews.blank?  %>
               <h3>No reviews just yet. Would you like to add one?</h3>
                 <%= link_to "Write review", new_movie_review_path(@movie), class: "btn btn-info" %>
@@ -58,6 +56,7 @@
                 <p><%= review.comment %></p>
               </div>
             <% end %>
+            <%= link_to " New Review", new_movie_review_path(@movie.id), class: "btn btn-primary fa fa-plus-square-o"  %>
           <% end %>
         </div>
       </div>
