@@ -13,12 +13,18 @@
 			<li>
 				<a href="<%= asset_path movies_path %>">Movies</a>
 			</li>
-			<li>
-				<a href="#">Link</a>
-			</li>
+			
 			
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
+		
+		<li><%= form_tag search_movies_path, method: :get, class: "navbar-form navbar-left", role: "search" do  %>
+		<p>
+		<%= text_field_tag :search, params[:search], class: "form-control" %>
+		<%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+		</p>
+		<% end %>
+		</li>
 			<li>
 				<% if defined?(Devise) %>
 				<% if user_signed_in? %>
