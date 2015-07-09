@@ -12,18 +12,23 @@
     </div>
   <% end %>
 
+  <div class="field formmargin">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class: "btn btn-default" %>
+  </div>
 <div class="form-group">
   <div class="field formmargin">
     <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= f.form_field :title, class: "form-control" %>
   </div>
   <div class="field formmargin">
     <%= f.label :description %><br>
     <%= f.text_area :description, class: "form-control" %>
   </div>
-  <div class="field formmargin">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
+  <div class="formmargin dropdown">
+  <% genre = {"Comedy":"Comedy", "Action":"Action", "Horror":"Horror", "Animation":"Animation", "Documentary":"Documentary", "Romance":"Romance", "Drama":"Drama"}  %>
+  <%= f.label :genre %>
+  <%= f.select :genre, genre, class: "btn btn-default dropdown-toggle" %>
   </div>
   <div class="field formmargin">
     <%= f.label :length %><br>

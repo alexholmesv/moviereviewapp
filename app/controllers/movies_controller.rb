@@ -6,12 +6,11 @@ class MoviesController < ApplicationController
   # GET /movies.json
   def search
     if params[:search].present?
-      @movies = Movie.search(params[:search])
+      @movies = Movie.search params[:search], fields: [{title: :text_start}]
     else
       @movies = Movie.all
     end
   end
-
 
   def index
     @movies = Movie.all
@@ -86,6 +85,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:title, :description, :length, :rating, :director, :photo, :image)
+      params.require(:movie).permit(:title, :description, :length, :rating, :director, :photo, :image, :genre)
     end
 end
