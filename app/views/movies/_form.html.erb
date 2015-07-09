@@ -19,16 +19,16 @@
 <div class="form-group">
   <div class="field formmargin">
     <%= f.label :title %><br>
-    <%= f.form_field :title, class: "form-control" %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="field formmargin">
     <%= f.label :description %><br>
     <%= f.text_area :description, class: "form-control" %>
   </div>
-  <div class="formmargin dropdown">
+  <div class="field formmargin">
   <% genre = {"Comedy":"Comedy", "Action":"Action", "Horror":"Horror", "Animation":"Animation", "Documentary":"Documentary", "Romance":"Romance", "Drama":"Drama"}  %>
   <%= f.label :genre %>
-  <%= f.select :genre, genre, class: "btn btn-default dropdown-toggle" %>
+  <%= f.select :genre, genre, class: "form-control" %>
   </div>
   <div class="field formmargin">
     <%= f.label :length %><br>
